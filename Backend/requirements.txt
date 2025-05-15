@@ -1,0 +1,17 @@
+fastapi==0.95.0
+uvicorn==0.22.0
+sqlalchemy==1.4.46
+asyncmy==1.2.5          
+databases==0.5.5        
+pydantic==1.10.7
+alembic==1.9.3          
+python-dotenv           
+passlib[bcrypt]
+when signing up you also need to fill out name update all the needed information
+
+Access Key ID
+c6bfa90b1bed3851f9224f2b0a3a759b
+Click to copy
+
+Secret Access Key
+a18a289bfaf4c038530f350e2498c83f9853fa39228e4cc750ee973b8bb6bf2f
