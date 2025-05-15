@@ -1,0 +1,127 @@
+/* src/styles/HomePage.css */
+
+.home-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.home-content {
+  flex: 1;
+  margin-left: 70px; /* Matches sidebar width */
+  padding: 16px;
+  background-color: white;
+}
+
+.top-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 15px;
+}
+
+.home-main-content {
+  display: flex;
+  gap: 20px;
+}
+
+.lessons-container {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.unit-title-header {
+  font-size: 2.2rem;
+  color: #ff7b00;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.unit-description {
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.units-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.unit-section {
+  margin-bottom: 20px;
+}
+
+.unit-lessons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar-widgets {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 300px;
+}
+
+.shop-widget {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shop-widget h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.shop-icon-container {
+  margin: -9px 0;
+}
+
+.shop-icon {
+  width: 100px;
+  top: -11px;
+  height: 90px;
+  position: relative;
+}
+
+.shop-button {
+  background-color: #ffd29c;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.shop-button:hover {
+  background-color: #ffc278;
+}
+
+.loading,
+.error-message {
+  padding: 20px;
+  text-align: center;
+}
+
+.error-message {
+  color: #d32f2f;
+}

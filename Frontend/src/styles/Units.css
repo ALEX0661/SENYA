@@ -1,0 +1,65 @@
+/* src/styles/Units.css */
+
+.unit-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
+  }
+  
+  .unit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .unit-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .unit-order {
+    font-size: 0.9em;
+    color: #777;
+  }
+  
+  .unit-status {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+  
+  .unit-card.locked {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  
+  .lock-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border-radius: 8px;
+  }
+  
+  .unit-title {
+    font-size: 1.5em;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  
+  .unit-description {
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+  }
+  

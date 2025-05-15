@@ -1,0 +1,153 @@
+.flashcard-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.flashcard-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 60px; /* Match sidebar width */
+}
+
+.flashcard-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.flashcard-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.back-button {
+  background-color: #6b7fd7;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.back-button:hover {
+  background-color: #586bc3;
+}
+
+.units-grid, .lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.lesson-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
+
+.lesson-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lesson-card h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.lesson-card.completed {
+  border: 2px solid #4CAF50;
+}
+
+.lesson-card.locked {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.lock-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+}
+
+.check-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+  .flashcard-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+  
+  .units-grid, .lessons-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+}
+/* Add these new styles to your existing Flashcard.css */
+
+.video-error {
+  width: 90%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffeded;
+  color: #d32f2f;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.retry-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #3498db;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.video-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}

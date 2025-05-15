@@ -1,0 +1,127 @@
+/* Sidebar.css - Refined Version */
+
+.sidebar {
+  width: 70px;
+  height: 100vh;
+  background-color: #ff7b00;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar-logo {
+  padding: 15px 0 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-logo-circle {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: white;
+  color: #ff7b00;
+  border-radius: 50%;
+  margin: 0 auto 5px;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-logo-text {
+  font-size: 12px;
+  margin: 0;
+  color: white;
+}
+
+.sidebar-menu {
+  flex: 1;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Links without underline */
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  text-align: center;
+}
+
+/* Base item styles */
+.sidebar-item {
+  margin: 10px 0;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+/* Always show text below icon */
+.sidebar-icon {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.sidebar-text {
+  font-size: 12px;
+  display: block;
+}
+
+/* Active item styling - white background with text below icon */
+.sidebar a.active .sidebar-item {
+  background-color: white;
+  color: #ff7b00;
+  margin: 5px 0;
+  padding: 12px 0 8px;
+  flex-direction: column; /* Keep text under icon */
+  align-items: center;
+}
+
+/* Black icons for active items */
+.sidebar a.active .sidebar-icon {
+  color: #e0711c;
+}
+
+/* Non-active items hover effect */
+.sidebar-item:hover:not(.active .sidebar-item) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Logout button */
+.sidebar-footer {
+  padding: 15px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-logout-button {
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sidebar-logout-button .sidebar-icon {
+  color: #ff7b00;
+  margin: 0;
+}

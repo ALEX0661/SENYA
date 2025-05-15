@@ -1,0 +1,123 @@
+.user-container {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  font-family: 'Poppins', sans-serif;
+}
+
+.user-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.user-error {
+  color: #e74c3c;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  background-color: #fdecea;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-input-group {
+  margin-bottom: 1.25rem;
+}
+
+.user-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.user-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.user-input:focus {
+  outline: none;
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2);
+}
+
+.user-button {
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  background: #2ecc71;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.user-button:hover {
+  background: #27ae60;
+}
+
+.user-button:disabled {
+  background: #a5d6bc;
+  cursor: not-allowed;
+}
+
+.user-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.user-link {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.user-link:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+.user-separator {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.user-separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.user-separator span {
+  position: relative;
+  background: #fff;
+  padding: 0 1rem;
+  color: #888;
+  font-size: 0.9rem;
+}

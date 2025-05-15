@@ -1,0 +1,57 @@
+/* src/components/Users/UserStatus.css */
+
+.user-status-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.currency-item {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 5px 12px;
+}
+
+.currency-icon {
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.currency-value {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.user-status-loading,
+.user-status-error {
+  padding: 10px;
+  font-style: italic;
+}
+
+.user-status-error {
+  color: #d32f2f;
+}
+
+/* New styles for heart timer */
+.hearts-container {
+  position: relative;
+  padding-right: 15px;
+}
+
+.heart-timer {
+  position: absolute;
+  right: 2px;
+  top: 140%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  background-color: #ffebee;
+  border-radius: 10px;
+  padding: 2px 6px;
+  margin-left: 8px;
+  color: #e53935;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid #ffcdd2;
+}

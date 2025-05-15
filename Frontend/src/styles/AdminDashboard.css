@@ -1,0 +1,263 @@
+/* src/styles/AdminDashboard.css */
+:root {
+  --primary: #ff7a00;
+  --primary-light: #ffa64d;
+  --primary-dark: #e66000;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --bg-light: #ffffff;
+  --bg-dark: #f5f5f5;
+  --border-color: #e0e0e0;
+  --success: #4caf50;
+  --danger: #f44336;
+  --warning: #ff9800;
+  --info: #2196f3;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Global Admin Styles */
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-primary);
+}
+
+/* Sidebar Styles */
+.admin-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  background-color: var(--bg-dark);
+  border-right: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.admin-logo {
+  padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-logo h2 {
+  color: var(--primary);
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.admin-nav {
+  flex: 1;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-nav button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.admin-nav button.active {
+  color: var(--primary);
+  font-weight: 600;
+  background-color: rgba(255, 122, 0, 0.1);
+}
+
+.admin-nav button.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--primary);
+}
+
+.admin-nav button:hover:not(.active) {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+}
+
+.admin-logout {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.logout-button:hover {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  border-color: rgba(244, 67, 54, 0.3);
+}
+
+/* Main Content Styles */
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-light);
+}
+
+.admin-header {
+  height: 70px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-light);
+  z-index: 10;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumb button {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.breadcrumb button:hover:not(.active) {
+  color: var(--primary);
+  background-color: rgba(255, 122, 0, 0.1);
+}
+
+.breadcrumb button.active {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.breadcrumb-separator {
+  color: var(--text-secondary);
+}
+
+.admin-content {
+  padding: 2rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Loading and Error States */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 122, 0, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+/* Shared Component Styles */
+.admin-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.admin-controls h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.add-button-center {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 2rem auto;
+  transition: background-color 0.2s ease;
+}
+
+.add-button-center:hover {
+  background-color: var(--primary-dark);
+}
+
+.no-data {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-secondary);
+}

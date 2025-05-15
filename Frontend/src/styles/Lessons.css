@@ -1,0 +1,545 @@
+/* src/styles/Lessons.css - updated styles with better colors */
+
+.lesson-cards {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.lesson-cards:hover:not(.lesson-card-locked) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Different color schemes based on lesson status - improved colors */
+.lesson-cards-current {
+  background-color: #3b82f6; /* Vibrant blue for current/active lesson */
+  color: white;
+}
+
+.lesson-cards-available {
+  background-color: #e0f2fe; /* Light blue for available lessons */
+  color: #1e293b;
+  border-left: 4px solid #3b82f6;
+}
+
+.lesson-cards-completed {
+  background-color: #4ade80; /* Green for completed lessons */
+  color: #1e293b;
+}
+
+.lesson-cards-locked {
+  background-color: #e2e8f0; /* Light gray for locked lessons */
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.lesson-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.lesson-info {
+  flex: 1;
+}
+
+.lesson-number {
+  font-size: 14px;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.lesson-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.lesson-progress {
+  margin-top: 12px;
+  width: 100%;
+}
+
+.lesson-progress-label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* Style for the progress bar - you might need to adjust based on your ProgressBar component */
+.progress-bar {
+  height: 8px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #f97316; /* Orange progress color */
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Lock overlay for locked lessons */
+.lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05); /* Subtle gray overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  z-index: 2;
+}
+
+/* For locked lessons, dim the entire card */
+.lesson-cards-locked .lesson-title,
+.lesson-cards-locked .lesson-number {
+  opacity: 0.7;
+}
+
+/* Add these to your existing Lessons.css file */
+
+.lesson-cards {
+  position: relative;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  overflow: hidden;
+}
+
+.lesson-cards:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* New styles for lesson image */
+.lesson-image-container {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.lesson-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lesson-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Lock overlay should cover the entire card */
+.lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Status-based colors */
+.lesson-cards-locked {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.lesson-cards-completed {
+  background-color: #e6ffea;
+}
+
+.lesson-cards-current {
+  background-color: #e6f7ff;
+}
+
+.lesson-cards-available {
+  background-color: #fff;
+}
+
+.lesson-number {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.lesson-title {
+  margin: 0 0 8px 0;
+}
+
+.lesson-progress {
+  margin-top: 8px;
+}
+
+.lesson-progress-label {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+
+/* Add these styles to your Lessons.css file */
+
+.lesson-cards {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #333;
+  /* For images as background */
+  overflow: hidden;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+/* When using image backgrounds */
+.lesson-cards[style*="background-image"] {
+  color: #ffffff; /* Ensure text is readable on image backgrounds */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add text shadow for better readability */
+}
+
+.lesson-cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-content {
+  width: 100%;
+  position: relative;
+  z-index: 2; /* Ensure content stays above background */
+}
+
+.lesson-number {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: inherit;
+}
+
+.lesson-title {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: inherit;
+}
+
+.lesson-progress {
+  margin-top: 15px;
+}
+
+.lesson-progress-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: inherit;
+}
+
+/* Status-based styling */
+.lesson-cards-locked {
+  background-color: #f0f0f0;
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.lesson-cards-locked[style*="background-image"] {
+  filter: grayscale(100%);
+}
+
+.lesson-cards-completed {
+  background-color: #e7f7e7;
+}
+
+.lesson-cards-current {
+  background-color: #e3f2fd;
+  border: 2px solid #2196f3;
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  z-index: 3;
+}
+/* Add these styles to your Lessons.css file */
+
+.lesson-cards {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #333;
+  /* For images as background */
+  overflow: hidden;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* When using image backgrounds */
+.lesson-cards[style*="background-image"] {
+  color: #ffffff; /* Ensure text is readable on image backgrounds */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
+}
+
+.lesson-cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-content {
+  width: 100%;
+  position: relative;
+  z-index: 2; /* Ensure content stays above background */
+}
+
+.lesson-info {
+  text-align: center;
+}
+
+.lesson-number {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: inherit;
+}
+
+.lesson-title {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: inherit;
+}
+
+.lesson-progress {
+  margin-top: 15px;
+}
+
+.lesson-progress-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: inherit;
+}
+
+/* Status-based styling */
+.lesson-cards-locked {
+  background-color: #f0f0f0;
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.lesson-cards-locked[style*="background-image"] {
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+.lesson-cards-completed {
+  background-color: #e7f7e7;
+}
+
+.lesson-cards-current {
+  background-color: #e3f2fd;
+  border: 2px solid #2196f3;
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  z-index: 3;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Progress bar styling */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(200, 200, 200, 0.5);
+  border-radius: 5px;
+}
+
+.progress-bar[style*="background-image"] .progress-fill {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.lesson-cards {
+  position: relative;
+  overflow: hidden;
+}
+.lesson-cards .image-overlay {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+  z-index: 0;
+}
+.lesson-cards .lesson-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+/* Add these styles to your Lessons.css file */
+
+.lesson-cards {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #333;
+  /* For images as background */
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Keep images contained within border radius */
+}
+
+/* When using image backgrounds - improve text contrast */
+.lesson-cards[style*="background-image"] {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Enhance text readability */
+}
+
+.lesson-cards:hover:not(.lesson-cards-locked) {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-content {
+  width: 100%;
+  z-index: 2; /* Ensure content stays above background */
+  position: relative;
+}
+
+.lesson-number {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: inherit;
+}
+
+.lesson-title {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: inherit;
+}
+
+.lesson-progress {
+  margin-top: 15px;
+}
+
+.lesson-progress-label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: inherit;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(200, 200, 200, 0.5);
+  border-radius: 5px;
+  overflow: hidden; /* Ensure progress bar fill stays within container */
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #f97316; /* Orange progress color */
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+/* For cards with background images */
+.lesson-cards[style*="background-image"] .progress-bar {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.lesson-cards[style*="background-image"] .progress-bar-fill {
+  background-color: #ffffff;
+}
+
+/* Lock overlay for locked lessons */
+.lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Darker overlay for locked lessons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  z-index: 3;
+  color: white;
+}
+
+/* Status-based styling */
+.lesson-cards-locked {
+  cursor: not-allowed;
+}
+
+.lesson-cards-locked[style*="background-image"] {
+  filter: grayscale(100%);
+  opacity: 0.8;
+}

@@ -1,0 +1,176 @@
+/* src/components/Flashcards/Flashcard.css */
+
+.flashcard {
+  width: 300px;
+  height: 350px;
+  perspective: 1000px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;    /* keep children in 3D space */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+}
+
+.flashcard.flipped .flashcard-inner {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;     /* hide when flipped away */
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.flashcard-front {
+  background-color: #ffffff;
+  color: #333;
+  border: 2px solid #3498db;
+}
+
+.flashcard-front .instruction {
+  color: #3498db;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  padding: 12px 20px;
+  background-color: #f0f8ff;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.flashcard-front .sign-name {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-top: 10px;
+  word-wrap: break-word;
+  width: 90%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.flashcard-back {
+  background-color: #3498db;
+  color: white;
+  transform: rotateY(180deg);      /* flip it by default */
+}
+
+.flashcard-back h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.card-video {
+  width: 90%;
+  max-height: 200px;
+  height: auto;
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform: translateZ(0);        /* force its own GPU layer */
+}
+
+.no-video {
+  width: 90%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  color: #777;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.flip-instruction {
+  font-size: 14px;
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hover shadow and pulse animation for extra polish */
+.flashcard:hover .flashcard-inner {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.flashcard:hover {
+  animation: pulse 1s infinite;
+}
+
+/* Video error state */
+.video-error {
+  width: 90%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffeded;
+  color: #d32f2f;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.retry-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #3498db;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.video-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Ensure back face stays on top when flipped */
+.flashcard.flipped .flashcard-back {
+  z-index: 2;
+}

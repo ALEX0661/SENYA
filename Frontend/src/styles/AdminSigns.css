@@ -1,0 +1,179 @@
+/* src/styles/AdminSigns.css */
+.admin-signs {
+  padding: 1rem;
+}
+
+.admin-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.signs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.sign-card {
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.sign-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.sign-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.sign-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  word-break: break-word;
+  padding-right: 1rem;
+}
+
+/* Improved video container */
+.sign-video {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* Fixed video positioning */
+.sign-video-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Keep the video's aspect ratio */
+  background-color: #000; /* Black background for letterboxing */
+}
+
+.sign-footer {
+  padding: 1.25rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.difficulty-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Fixed the selectors to use class properly */
+.difficulty-Easy {
+  background-color: rgba(76, 175, 80, 0.15);
+  color: var(--success);
+}
+
+.difficulty-Medium {
+  background-color: rgba(255, 152, 0, 0.15);
+  color: var(--warning);
+}
+
+.difficulty-Hard {
+  background-color: rgba(244, 67, 54, 0.15);
+  color: var(--danger);
+}
+
+.sign-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.sign-actions button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+  background-color: var(--bg-light);
+}
+
+.edit-button:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.archive-button:hover {
+  background-color: rgba(255, 59, 48, 0.1);
+}
+
+/* Video controls styling */
+.sign-video-preview::-webkit-media-controls {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Loading and empty states */
+.loading-container,
+.no-data {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.no-data {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  padding: 3rem;
+}
+
+.add-button,
+.add-button-center {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.add-button:hover,
+.add-button-center:hover {
+  background-color: var(--primary-dark);
+}
+
+.add-button-center {
+  margin: 1.5rem auto 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .signs-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,118 @@
+.identification-game {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.id-video {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.replay-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.option-button {
+  padding: 16px;
+  background-color: #f8f9fa;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.option-button:hover:not(:disabled) {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+}
+
+.option-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.feedback {
+  padding: 12px;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.feedback.correct {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.feedback.incorrect {
+  background-color: #fde0dc;
+  color: #c62828;
+}
+
+.timer, .score, .progress {
+  font-weight: bold;
+}
+
+/* Add these styles to your existing IdentificationGame.css file */
+
+.timer {
+  position: relative;
+}
+
+.penalty-flash {
+  animation: flash-red 1s;
+}
+
+.penalty-text {
+  color: #ff3b3b;
+  font-weight: bold;
+  margin-left: 5px;
+  animation: fade-out 1.5s forwards;
+}
+
+@keyframes flash-red {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(255, 59, 59, 0.5); }
+  100% { background-color: transparent; }
+}
+
+@keyframes fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}

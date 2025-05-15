@@ -1,0 +1,161 @@
+/* src/styles/CongratulationModal.css */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.celebration-modal {
+  padding: 40px 20px;
+}
+
+/* Trophy styling */
+.trophy-container {
+  margin: 10px auto 20px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trophy-image {
+  width: auto;
+  height: 180%;
+  object-fit: contain;
+}
+
+/* Text styling */
+.celebration-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.completion-message {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  color: #555;
+}
+
+/* Ruby reward badge */
+.reward-badge {
+  background-color: #FFEBD3;
+  border-radius: 50px;
+  padding: 8px 20px;
+  display: inline-flex;
+  align-items: center;
+  margin: 5px auto 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ruby-icon {
+  font-size: 22px;
+  margin-right: 5px;
+  color: #FF4F4F;
+}
+
+.reward-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FF4F4F;
+}
+
+.streak-count {
+  font-size: 16px;
+  margin: 15px 0;
+  color: #666;
+}
+
+/* Continue button */
+.continue-button {
+  background-color: #FF6B00;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.2s;
+}
+
+.continue-button:hover {
+  background-color: #E55E00;
+}
+
+/* Confetti animation */
+.confetti-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -20px;
+  left: 0;
+}
+
+.left-confetti {
+  background-image: url('../assets/confetti-left.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
+  animation: fallLeft 1.5s ease-out forwards;
+}
+
+.right-confetti {
+  background-image: url('../assets/confetti-right.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+  animation: fallRight 1.5s ease-out forwards;
+}
+
+@keyframes fallLeft {
+  0% {
+    transform: translateY(-100%) translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fallRight {
+  0% {
+    transform: translateY(-100%) translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+}

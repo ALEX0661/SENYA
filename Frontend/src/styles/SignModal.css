@@ -1,0 +1,130 @@
+/* src/styles/SignModal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .sign-modal {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .sign-modal h2 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .form-group input[type="text"],
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+  
+  .file-input {
+    width: 100%;
+    padding: 8px 0;
+  }
+  
+  .video-preview {
+    width: 100%;
+    max-height: 200px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-top: 8px;
+    background-color: #f7f7f7;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  
+  .cancel-button,
+  .save-button {
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+  
+  .cancel-button {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    color: #666;
+  }
+  
+  .save-button {
+    background-color: #4b70e2;
+    border: none;
+    color: white;
+  }
+  
+  .cancel-button:hover {
+    background-color: #eee;
+  }
+  
+  .save-button:hover {
+    background-color: #3d5ed8;
+  }
+  
+  .cancel-button:active,
+  .save-button:active {
+    transform: scale(0.98);
+  }
+  
+  button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .sign-modal {
+      width: 95%;
+      padding: 16px;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+    }
+    
+    .cancel-button,
+    .save-button {
+      width: 100%;
+    }
+  }

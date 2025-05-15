@@ -1,0 +1,215 @@
+/* src/styles/LessonPage.css */
+
+.lesson-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.lesson-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.back-button {
+  padding: 6px 12px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-right: 16px;
+}
+
+.lesson-title {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 22px;
+}
+
+.user-hearts {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.hearts-label {
+  margin-right: 6px;
+  font-weight: bold;
+}
+
+.heart-filled,
+.heart-empty {
+  font-size: 18px;
+  margin-right: 2px;
+}
+
+.video-container {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.lesson-video {
+  max-width: 100%;
+  /* scale between 180px and 360px, ideally 35% of viewport height */
+  max-height: clamp(180px, 35vh, 360px);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-description {
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.lesson-description h2 {
+  margin-top: 0;
+}
+
+.signs-grid {
+  display: grid;
+  /* allow more cards per row on small screens */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.sign-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  transition: transform 0.2s;
+}
+
+.sign-card:hover {
+  transform: translateY(-5px);
+}
+
+.sign-video {
+  width: 100%;
+  border-radius: 5px;
+  margin: 8px 0;
+}
+
+.lesson-quiz-section {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.loading,
+.error-message {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 16px;
+}
+
+.error-message {
+  color: #d32f2f;
+}
+
+/* Completion screen styles */
+.lesson-completion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh; /* reduced from 80vh */
+  background-color: #f5f5f5;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.completion-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  text-align: center;
+  max-width: 450px;
+  width: 100%;
+}
+
+.completion-card h2 {
+  margin-top: 0;
+  color: #4caf50;
+  font-size: 26px;
+}
+
+.rubies-earned {
+  margin: 24px 0;
+}
+
+.rubies-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.rubies-count {
+  font-size: 22px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.rubies-icon {
+  font-size: 28px;
+}
+
+.next-lesson-message {
+  margin: 20px 0;
+  padding: 12px;
+  background-color: #e8f5e9;
+  border-radius: 5px;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.continue-button {
+  padding: 10px 24px;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.continue-button:hover {
+  background-color: #303f9f;
+}
+
+/* Responsive tweaks when viewport height is limited */
+@media (max-height: 800px) {
+  .lesson-container {
+    padding: 12px;
+  }
+  .lesson-header {
+    margin-bottom: 20px;
+  }
+  .video-container {
+    margin-bottom: 20px;
+  }
+  .lesson-description {
+    padding: 14px;
+    margin-bottom: 20px;
+  }
+  .signs-grid {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .lesson-quiz-section {
+    margin-top: 28px;
+    padding-top: 14px;
+  }
+  .completion-card {
+    padding: 20px;
+  }
+}

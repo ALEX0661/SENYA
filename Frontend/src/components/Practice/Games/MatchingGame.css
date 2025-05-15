@@ -1,0 +1,96 @@
+.matching-game {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .game-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .timer, .score, .matches {
+    font-weight: bold;
+  }
+  
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .card {
+    aspect-ratio: 3/4;
+    perspective: 1000px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .card.matched {
+    transform: rotateY(180deg);
+    opacity: 0.7;
+    pointer-events: none;
+    box-shadow: 0 0 0 2px #4caf50;
+  }
+  
+  .card-back, .card-video, .card-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-back {
+    background-color: #4a90e2;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .card-video, .card-text {
+    background-color: white;
+    transform: rotateY(180deg);
+    border: 1px solid #eee;
+  }
+  
+  .card-video {
+    object-fit: cover;
+  }
+  
+  .card-text {
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    word-break: break-word;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .cards-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }

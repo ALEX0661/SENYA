@@ -1,0 +1,697 @@
+/* src/styles/ProfilePage.css */
+.profile-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.profile-content {
+  flex: 1;
+  padding: 1rem;
+  margin-left: 75px; /* Match sidebar width */
+}
+
+/* User info section */
+.user-info-section {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-avatar {
+  margin-right: 20px;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffd28c;
+}
+
+.user-details {
+  flex: 1;
+  position: relative;
+}
+
+.user-name {
+  font-size: 28px;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.user-email {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+
+.edit-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #ffd28c;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.edit-icon {
+  font-size: 16px;
+}
+
+/* User Stats Cards */
+.user-stats-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.stat-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.stat-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.buy-button {
+  margin-top: 8px;
+  background-color: #ffd28c;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+  background-color: #ffbc5e;
+}
+
+/* Progress section */
+.progress-section {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.progress-section h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.progress-overview {
+  display: flex;
+  align-items: flex-start;
+}
+
+.progress-circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.progress-ring-background {
+  fill: none;
+  stroke: #ffebd6;
+  stroke-width: 8;
+}
+
+.progress-ring-circle {
+  fill: none;
+  stroke: #ff8c00;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.progress-percentage {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.progress-label {
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Units and Lessons Progress - Redesigned */
+.units-progress {
+  flex: 1;
+}
+
+.no-units-message {
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  color: #666;
+  text-align: center;
+  font-size: 14px;
+}
+
+.unit-container {
+  margin-bottom: 10px;
+}
+
+.lesson-item {
+  background-color: #f8f8f8;
+  padding: 12px 15px;
+  border-radius: 8px;
+}
+
+.lesson-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.lesson-progress-bar-container {
+  height: 12px;
+  background-color: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.lesson-progress-bar {
+  height: 100%;
+  background-color: #ff8c00;
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.lesson-progress-text {
+  font-size: 12px;
+  text-align: right;
+  color: #ff8c00;
+  font-weight: 500;
+}
+
+/* Certificate section */
+.certificate-section {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.certificate-section h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.certificate-section p {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.certificate-button {
+  background-color: #e3f0ff;
+  color: #333;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.certificate-button:hover:not([disabled]) {
+  background-color: #cce4ff;
+}
+
+.certificate-button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Edit Profile */
+.edit-profile-container {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.edit-profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #ff8c00;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.edit-profile-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.profile-photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-photo {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-photo .profile-image {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.upload-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.change-photo-button {
+  padding: 8px 15px;
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.change-photo-button:hover:not([disabled]) {
+  background-color: #e67e00;
+}
+
+.change-photo-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.profile-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.save-button {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  flex: 1;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-button:hover {
+  background-color: #e67e00;
+}
+
+.cancel-button {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  flex: 1;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cancel-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Loading and Error states */
+.loading, .error-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+}
+
+.error-message {
+  color: #e74c3c;
+}
+
+/* Success message */
+.success-message {
+  padding: 15px;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Add these styles to your existing ProfilePage.css file */
+
+/* Progress Overview - Side by side layout */
+.progress-overview {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: -30px;
+  align-items: center;
+}
+
+.progress-circle-container {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.progress-ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-ring-background {
+  fill: none;
+  stroke: #e0e0e0;
+  stroke-width: 8;
+}
+
+.progress-ring-circle {
+  fill: none;
+  stroke: #FF9800; /* Orange progress circle */
+  stroke-width: 8;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.progress-percentage {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.progress-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Units List Styles */
+.units-lists {
+  flex: 1;
+  margin-top: 0;
+}
+
+.units-lists h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.unit-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.unit-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.unit-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.unit-header:hover {
+  background-color: #f0f0f0;
+}
+
+.unit-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+.unit-progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+}
+
+.unit-progress-bar-background {
+  flex: 1;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.unit-progress-bar {
+  height: 100%;
+  background-color: #FF9800; /* Orange progress bar */
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.unit-progress-text {
+  min-width: 40px;
+  text-align: right;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.unit-dropdown-icon {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Lessons Styles */
+.unit-lessons {
+  padding: 0 15px 15px;
+  background-color: #fff;
+}
+
+.lesson-item {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+}
+
+.lesson-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lesson-title {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.lesson-progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lesson-progress-bar-background {
+  flex: 1;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lesson-progress-bar {
+  height: 100%;
+  background-color: #FF9800; /* Orange progress bar */
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.lesson-progress-text {
+  min-width: 40px;
+  text-align: right;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .progress-overview {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .progress-circle-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .units-lists {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .unit-progress-container {
+    width: 120px;
+  }
+  
+  .unit-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .unit-progress-container {
+    width: 100%;
+  }
+  
+  .unit-dropdown-icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+}

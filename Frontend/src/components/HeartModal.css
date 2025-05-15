@@ -1,0 +1,186 @@
+/* src/components/HeartModal.css */
+.heart-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+  }
+  
+  .heart-modal {
+    background-color: white;
+    border-radius: 16px;
+    padding: 24px;
+    width: 90%;
+    max-width: 360px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: modalFadeIn 0.3s ease-out;
+  }
+  
+  @keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .heart-modal-icon {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .heart-icon-large {
+    font-size: 56px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    animation: heartBeat 1.3s ease-in-out infinite;
+  }
+  
+  .heart-icon-x {
+    position: absolute;
+    bottom: 5px;
+    right: -10px;
+    background-color: #ff4b4b;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+  }
+  
+  @keyframes heartBeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.1); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.1); }
+    70% { transform: scale(1); }
+  }
+  
+  .heart-modal h2 {
+    margin: 16px 0;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .heart-modal-message {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .heart-timer-container {
+    background-color: #f7f7f7;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+  
+  .heart-timer-label {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .heart-timer-display {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin: 8px 0;
+    font-family: 'Courier New', monospace;
+  }
+  
+  .timer-digit {
+    display: inline-block;
+    background-color: #e6e6e6;
+    padding: 0 8px;
+    border-radius: 6px;
+    min-width: 50px;
+  }
+  
+  .timer-separator {
+    display: inline-block;
+    margin: 0 4px;
+    animation: separatorBlink 1s infinite;
+  }
+  
+  @keyframes separatorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  
+  .heart-timer-progress-container {
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 12px;
+  }
+  
+  .heart-timer-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ff80ab 0%, #ff4081 100%);
+    transition: width 1s linear;
+  }
+  
+  .heart-timer-loading {
+    color: #999;
+    font-style: italic;
+    padding: 8px 0;
+  }
+  
+  .heart-modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  
+  .heart-modal-button-primary {
+    background: linear-gradient(90deg, #ff6b6b 0%, #ff4081 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .heart-modal-button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 64, 129, 0.3);
+  }
+  
+  .heart-modal-button-primary:active {
+    transform: translateY(0);
+  }
+  
+  .button-icon {
+    margin-right: 8px;
+    font-size: 18px;
+  }
+  
+  .heart-modal-button-secondary {
+    background-color: transparent;
+    color: #666;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s;
+  }
+  
+  .heart-modal-button-secondary:hover {
+    color: #333;
+  }

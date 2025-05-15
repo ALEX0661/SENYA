@@ -1,0 +1,99 @@
+.admin-container {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  border-radius: 12px;
+  background: #f8fafc;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.admin-error {
+  color: #e74c3c;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  background-color: #fdecea;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-input-group {
+  margin-bottom: 1.25rem;
+}
+
+.admin-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.admin-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.admin-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.admin-button {
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  background: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.admin-button:hover {
+  background: #2980b9;
+}
+
+.admin-button:disabled {
+  background: #a9cce3;
+  cursor: not-allowed;
+}
+
+.user-login-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.admin-link {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.admin-link:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}

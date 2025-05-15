@@ -1,0 +1,551 @@
+/* src/styles/LessonPlayer.css */
+.lesson-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  /* shrink everything by 20% */
+  transform: scale(0.8);
+  transform-origin: top center;
+
+  /* compensate width so it still spans the full 1200px at its scaled size:
+     100% / 0.8 = 125% */
+  width: 125%;
+}
+
+/* fallback for browsers that support zoom */
+.lesson-container {
+  zoom: 0.8;
+}
+
+.lesson-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.lessons-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  /* shrink everything by 20% */
+  transform: scale(0.8);
+  transform-origin: top center;
+
+  /* compensate width so it still spans the full 1200px at its scaled size:
+     100% / 0.8 = 125% */
+  width: 125%;
+}
+
+.lesson-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 10;
+  margin-bottom: 15px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 5px;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+}
+
+.circle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #FF6B00;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.progress-container {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.hearts-display {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 24px;
+  padding: 16px 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.hearts-display.pulse {
+  animation: heartPulse 0.6s ease-in-out;
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); background-color: #ffebeb; }
+  100% { transform: scale(1); }
+}
+
+.heart-icon {
+  margin-right: 8px;
+  font-size: 22px;
+  position: relative;
+}
+
+.heart-loss {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FF3B30;
+  font-weight: bold;
+  opacity: 0;
+  animation: heartLoss 1.5s ease-out forwards;
+}
+
+@keyframes heartLoss {
+  0% { opacity: 1; top: 0; }
+  80% { opacity: 0.8; }
+  100% { opacity: 0; top: -40px; }
+}
+
+.heart-count {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.main-content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.content-card {
+  background-color: white;
+  border-radius: 28px;
+  width: 100%;
+  padding: 35px 25px;
+  box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0.7; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.lesson-instruction {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #333;
+  text-align: center;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+  transform: translateY(-5px);
+}
+
+.lesson-video {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+
+.sign-meaning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.meaning-label {
+  font-size: 22px;
+  margin-bottom: 25px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.meaning-text {
+  color: #FF6B00;
+  font-weight: 700;
+  font-size: 26px;
+  display: block;
+  margin-top: 8px;
+  animation: pop 0.5s ease-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.continue-button {
+  background-color: #FF6B00;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 45px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.continue-button:hover {
+  background-color: #e65c00;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
+}
+
+.continue-button:active {
+  transform: translateY(1px);
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.quiz-option-button {
+  background-color: white;
+  border: 2.5px solid #E0E0E0;
+  border-radius: 16px;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.quiz-option-button:hover {
+  border-color: #FF6B00;
+  background-color: #FFF5EE;
+  transform: translateY(-2px);
+}
+
+.quiz-option-button.correct {
+  border-color: #34C759;
+  background-color: #F0FFF4;
+  animation: correctAnswer 0.5s ease;
+}
+
+.quiz-option-button.incorrect {
+  border-color: #FF3B30;
+  background-color: #FFF0F0;
+  animation: incorrectAnswer 0.5s ease;
+}
+
+@keyframes correctAnswer {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes incorrectAnswer {
+  0%, 20%, 40%, 60%, 80% { transform: translateX(-5px); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.quiz-feedback {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 12px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.quiz-feedback.correct {
+  color: #34C759;
+  background-color: #F0FFF4;
+}
+
+.quiz-feedback.incorrect {
+  color: #FF3B30;
+  background-color: #FFF0F0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 24px;
+  padding: 35px;
+  max-width: 90%;
+  width: 420px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  animation: modalPop 0.4s ease-out;
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal-message {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.modal-button {
+  background-color: #FF6B00;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 35px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 10px;
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.modal-button:hover {
+  background-color: #e65c00;
+  transform: translateY(-3px);
+}
+
+.modal-button-secondary {
+  background-color: #E6E6E6;
+  color: #444;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-button-secondary:hover {
+  background-color: #D8D8D8;
+}
+
+/* Heart loss specific animations */
+.heart-loss-animation {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  color: red;
+  font-size: 24px;
+  animation: heartFloat 1.5s ease-out forwards;
+  z-index: 100;
+  opacity: 0;
+}
+
+@keyframes heartFloat {
+  0% { opacity: 1; transform: scale(1); top: 10px; }
+  100% { opacity: 0; transform: scale(0.5) rotate(20deg); top: -50px; }
+}
+
+/* Background wave overlay */
+
+/* Add these styles to LessonPlayer.css */
+
+/* Heart animations */
+@keyframes heartFloatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.8);
+  }
+}
+
+.heart-loss-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Improved heart display animations */
+.hearts-display {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.hearts-display.pulse {
+  animation: heartDisplayPulse 0.6s ease-in-out;
+}
+
+@keyframes heartDisplayPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.heart-icon {
+  position: relative;
+  font-size: 24px;
+}
+
+.heart-loss {
+  position: absolute;
+  top: -18px;
+  right: -10px;
+  color: #ff4b4b;
+  font-size: 18px;
+  font-weight: bold;
+  animation: lossNumberFloat 1.5s ease-out forwards;
+}
+
+@keyframes lossNumberFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
+.heart-count {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Enhanced feedback styles */
+.quiz-feedback {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  animation: feedbackAppear 0.3s ease-out;
+}
+
+.quiz-feedback.correct {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #27ae60;
+  border: 2px solid #27ae60;
+}
+
+.quiz-feedback.incorrect {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+}
+
+@keyframes feedbackAppear {
+  from { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quiz option button enhancements */
+.quiz-option-button {
+  transition: all 0.3s ease;
+}
+
+.quiz-option-button.correct {
+  background-color: #27ae60;
+  border-color: #27ae60;
+  box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+  transform: translateY(-2px);
+}
+
+.quiz-option-button.incorrect {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+  transform: translateY(-2px);
+}

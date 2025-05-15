@@ -1,0 +1,158 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .certificate-modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .certificate-content {
+    padding: 40px;
+    border: 10px solid #f0c14b;
+    margin: 20px;
+    background-color: #fffdf7;
+    text-align: center;
+    position: relative;
+  }
+  
+  .certificate-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #333;
+    margin: 5px;
+    pointer-events: none;
+  }
+  
+  .certificate-header {
+    margin-bottom: 30px;
+  }
+  
+  .certificate-header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .certificate-header h2 {
+    font-size: 24px;
+    color: #555;
+  }
+  
+  .certificate-body {
+    margin-bottom: 30px;
+  }
+  
+  .certificate-text {
+    font-size: 18px;
+    margin: 15px 0;
+  }
+  
+  .certificate-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4a8ef7;
+    margin: 20px 0;
+  }
+  
+  .certificate-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .certificate-date, .certificate-signature, .certificate-id {
+    text-align: center;
+    width: 30%;
+  }
+  
+  .date-label, .id-label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .date-value, .id-value {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .signature-line {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .signature-name {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .certificate-actions {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .download-button {
+    background-color: #4a8ef7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .download-button:hover {
+    background-color: #3a7ee7;
+  }
+  
+  @media print {
+    .modal-overlay {
+      background: none;
+      height: auto;
+    }
+    
+    .certificate-modal {
+      box-shadow: none;
+      width: 100%;
+      height: auto;
+    }
+    
+    .close-button, .certificate-actions {
+      display: none;
+    }
+  }

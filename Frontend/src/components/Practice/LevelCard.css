@@ -1,0 +1,71 @@
+/* LevelCard.css */
+.level-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.level-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.level-card.locked {
+  opacity: 0.8;
+  background-color: #f5f5f5;
+}
+
+.level-card.locked:hover {
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: not-allowed;
+}
+
+.level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.level-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.lock-icon {
+  font-size: 24px;
+}
+
+.level-card p {
+  margin: 0 0 15px 0;
+  color: #666;
+}
+
+.level-progress {
+  margin-top: 15px;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.level-progress span {
+  font-size: 12px;
+  color: #666;
+}
